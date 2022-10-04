@@ -13,7 +13,7 @@
     <div>SERIES: {{$uscita->series}}</div>
     <div>TYPE: {{$uscita->type}}</div>
 
-
+    <a class="btn btn-primary" href="{{route('comics.index')}}">Torna alla lista</a>
 
 </div>
 
