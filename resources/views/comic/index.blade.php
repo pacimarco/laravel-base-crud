@@ -35,6 +35,13 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('comics.show',['comic' => $uscita->id])}}">vedi</a>
                         <a class="btn btn-warning" href="{{route('comics.edit',['comic' => $uscita])}}">modifica</a>
+                    
+                        <form action="{{route('comics.destroy', ['comic' => $uscita])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">elimina</button>
+                        </form>
+
                     </td>
                     </tr>
                 
