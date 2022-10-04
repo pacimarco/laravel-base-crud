@@ -32,8 +32,11 @@
                     <td>{{$uscita->series}} </td>
                     <td>{{$uscita->sale_date}} </td>
                     <td>{{$uscita->type}} </td>
-                    <td><a class="btn btn-primary" href="{{route('comics.show',['comic' => $uscita->id])}}">vedi</a></td>
-                </tr>
+                    <td>
+                        <a class="btn btn-primary" href="{{route('comics.show',['comic' => $uscita->id])}}">vedi</a>
+                        <a class="btn btn-warning" href="{{route('comics.edit',['comic' => $uscita])}}">modifica</a>
+                    </td>
+                    </tr>
                 
                 @endforeach
             
