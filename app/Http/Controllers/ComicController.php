@@ -41,14 +41,14 @@ class ComicController extends Controller
         $newComic->title = $data['title'];
         $newComic->description = $data['description'];
         $newComic->type = $data['type'];
-        $newComic->sale_date = $data['sale_data'];
+        $newComic->sale_date = $data['sale_date'];
         $newComic->series = $data['series'];
         $newComic->thumb = $data['thumb'];
         $newComic->price = $data['price'];
 
         $newComic->save();
 
-        return redirect()->route('comic.index');
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -98,14 +98,14 @@ class ComicController extends Controller
             $uscita->title = $data['title'];
             $uscita->description = $data['description'];
             $uscita->type = $data['type'];
-            $uscita->sale_date = $data['sale_data'];
+            $uscita->sale_date = $data['sale_date'];
             $uscita->series = $data['series'];
             $uscita->thumb = $data['thumb'];
             $uscita->price = $data['price'];
             
             $uscita->save();
 
-            return redirect()->route('comic.index');
+            return redirect()->route('comics.index');
 
         }else{
         abort(404);
@@ -124,7 +124,7 @@ class ComicController extends Controller
 
         if ($uscita){
             $uscita->delete();
-            return redirect()->route('comic.index');
+            return redirect()->route('comics.index');
         }
         else{
             abort(404);
