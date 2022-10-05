@@ -36,7 +36,7 @@
                         <a class="btn btn-primary" href="{{route('comics.show',['comic' => $uscita->id])}}">vedi</a>
                         <a class="btn btn-warning" href="{{route('comics.edit',['comic' => $uscita])}}">modifica</a>
                     
-                        <form action="{{route('comics.destroy', ['comic' => $uscita])}}" method="POST">
+                        <form action="{{route('comics.destroy', ['comic' => $uscita])}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">elimina</button>
