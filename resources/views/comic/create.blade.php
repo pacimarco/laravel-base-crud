@@ -13,16 +13,16 @@
               <label for="title" class="form-label">title</label>
               <input type="text" class="form-control @error('title') is-invalid @enderror " id="title" name="title" value="{{old('title')}}" >
             @error('title')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
             @enderror
             
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
-                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror">{{old('title')}}</textarea>
+                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror">{{old('description')}}</textarea>
                 @error('description')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
             @enderror
             </div>
 
@@ -30,7 +30,7 @@
                 <label for="thumb" class="form-label">thumb</label>
                 <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}" >
                 @error('thumb')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
             @enderror
             </div>
 
@@ -38,7 +38,7 @@
                 <label for="price" class="form-label">price</label>
                 <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{old('price')}}" >
                 @error('price')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
                 @enderror
             </div>
 
@@ -46,7 +46,7 @@
                 <label for="series" class="form-label">series</label>
                 <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series" value="{{old('series')}}">
                 @error('series')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
                 @enderror
             </div>
 
@@ -54,7 +54,7 @@
                 <label for="sale_date" class="form-label">sale date</label>
                 <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value="{{old('sale_date')}}">
                 @error('sale_date')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
                 @enderror
             </div>
 
@@ -65,7 +65,7 @@
                    <option {{(old('type')=='graphic novel')?'selected':''}} value="graphic novel">graphic novel</option>
                </select>
                @error('type')
-                <div class="invalid-feedback"></div>
+                <div class="invalid-feedback">{{$message}}</div>
                 @enderror
             </div>
 
