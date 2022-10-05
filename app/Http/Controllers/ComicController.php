@@ -41,7 +41,7 @@ class ComicController extends Controller
                 'thumb' => 'required|max:250|url',
                 'title' => 'required|max:100|min:4',
                 'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
-                'price' => 'required|max:10|min:5',
+                'price' => 'required|max:10|min:3',
                 'series' => 'required|max:100|min:4',
                 'description' => 'nullable|max:65535',
                 'sale_date' => 'required',
@@ -104,6 +104,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'thumb' => 'required|max:250|url',
+                'title' => 'required|max:100|min:3',
+                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
+                'price' => 'required|max:10|min:3',
+                'series' => 'required|max:100|min:4',
+                'description' => 'nullable|max:65535',
+                'sale_date' => 'required',
+            ]
+        );
+
         $uscita = Comic::find($id);
         if ($uscita){
             
@@ -119,17 +131,7 @@ class ComicController extends Controller
             
             $uscita->save();
 
-            $request->validate(
-                [
-                    'thumb' => 'required|max:250|url',
-                    'title' => 'required|max:100|min:3',
-                    'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
-                    'price' => 'required|max:10|min:5',
-                    'series' => 'required|max:100|min:4',
-                    'description' => 'nullable|max:65535',
-                    'sale_date' => 'required',
-                ]
-            );
+            
 
             return redirect()->route('comics.index');
 
